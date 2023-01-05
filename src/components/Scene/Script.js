@@ -1,20 +1,20 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { TextureLoader, MeshMatcapMaterial } from 'three';
+import { TextureLoader, MeshMatcapMaterial, MeshStandardMaterial, Color } from 'three';
 //Global variables
 let currentRef = null;
 
 //Scene, camera, renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(25, 100 / 100, 0.1, 100);
-
-const light = new THREE.PointLight(0xffffff, 1, 100);
-
+//lights  
+const light = new THREE.PointLight(0xff0000, 5, 100);
 
 light.position.set(50, 50, 50);
 
 scene.add(light);
 scene.add(camera);
+
 camera.position.set(5, 5, 5);
 camera.lookAt(new THREE.Vector3());
 
@@ -53,11 +53,11 @@ const cube = new THREE.Mesh(
      })
 );
 scene.add(cube);
-const textureLoader = new TextureLoader();
-const matcapTexture = textureLoader.load('./textures/texture2.png');
 
 const geometry = new THREE.SphereGeometry( .7, 32, 16 );
-const material = new MeshMatcapMaterial({ matcap: matcapTexture });
+const material = new MeshStandardMaterial({
+  
+});
 const sphere = new THREE.Mesh(geometry, material);
 
 sphere.position.x = 2;
@@ -70,7 +70,10 @@ const torusknotmaterial = new THREE.MeshNormalMaterial({
 const torusKnot = new THREE.Mesh( torusknot, torusknotmaterial );
 torusKnot.position.x=-2
 scene.add( torusKnot );
-
+var loader = new THREE.TextureLoader()
+loader.load("./texture/1.jpg", function(texture){
+  scene.background = texture
+});
 //Init and mount the scene
 export const initScene = (mountRef) => {
   currentRef = mountRef.current;
