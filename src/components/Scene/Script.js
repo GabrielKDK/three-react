@@ -13,7 +13,6 @@ const light = new THREE.PointLight(0xffffff, 1, 100);
 // Establece la posición de la luz
 light.position.set(50, 50, 50);
 
-// Agrega la luz a la escena
 scene.add(light);
 scene.add(camera);
 camera.position.set(5, 5, 5);
