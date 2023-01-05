@@ -7,10 +7,10 @@ let currentRef = null;
 //Scene, camera, renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(25, 100 / 100, 0.1, 100);
-// Crea una nueva luz punto
+
 const light = new THREE.PointLight(0xffffff, 1, 100);
 
-// Establece la posición de la luz
+
 light.position.set(50, 50, 50);
 
 scene.add(light);

@@ -1,6 +1,5 @@
 # Plantilla para usar Three.js con React 
-Sientete libre de usar esta plantilla c: 
+Figuras basicas, probando conceptos
 
-## Instalacion 
-No te olvides de ejecutar el comando $ npm install , una vez hayas descargado el proyecto c: 
 
+Proyecto de estudio"# conceptos-basicos-three-js" 
